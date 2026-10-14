@@ -34,6 +34,14 @@ app.get("/api/log-test", (req, res) => {
   });
 });
 
+app.get("/api/time", (req, res) => {
+  res.json({
+    success: true,
+    timestamp: new Date().toISOString(),
+    timezone: "UTC",
+  });
+});
+
 app.listen(3000);
 
 export default httpServerHandler({ port: 3000 });
